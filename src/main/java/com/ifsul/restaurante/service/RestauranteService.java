@@ -10,36 +10,37 @@ import com.ifsul.restaurante.repository.RestauranteRepository;
 
 @Service
 public class RestauranteService {
-    @Autowired
-    private RestauranteRepository restauranteRepository;
 
-    public List<Restaurante> listarRestaurantes() {
-        return restauranteRepository.findAll();
-    }
+	@Autowired
+	private RestauranteRepository restauranteRepository;
 
-    public Restaurante criarRestaurante(Restaurante restaurante) {
-        return restauranteRepository.save(restaurante);
-    }
+	public List<Restaurante> listarRestaurantes() {
+		return restauranteRepository.findAll();
+	}
 
-    public Restaurante buscarRestaurantePorId(Long id) {
-        return restauranteRepository.findById(id).orElse(null);
-    }
+	public Restaurante criarRestaurante(Restaurante restaurante) {
+		return restauranteRepository.save(restaurante);
+	}
 
-    public void deletarRestaurante(Long id) {
-        restauranteRepository.deleteById(id);
-    }
-    
-    public List<Restaurante> buscarRestaurantesPorNome(String nome) {
-        return restauranteRepository.findByNomeContaining(nome);
-    }
+	public Restaurante buscarRestaurantePorId(Long id) {
+		return restauranteRepository.findById(id).orElse(null);
+	}
 
-    public List<Restaurante> buscarRestaurantesPorEndereco(String endereco) {
-        return restauranteRepository.findByEnderecoContaining(endereco);
-    }
+	public void deletarRestaurante(Long id) {
+		restauranteRepository.deleteById(id);
+	}
 
-    public List<Restaurante> buscarRestaurantesPorTipoCozinha(String tipoCozinha) {
-        return restauranteRepository.findByTipoCozinhaContaining(tipoCozinha);
-    }
-    
-    
+	public List<Restaurante> buscarRestaurantesPorNome(String nome) {
+		return restauranteRepository.findByNomeContaining(nome);
+	}
+
+	public List<Restaurante> buscarRestaurantesPorEndereco(String endereco) {
+		return restauranteRepository.findByEnderecoContaining(endereco);
+	}
+
+	public List<Restaurante> buscarRestaurantesPorTipoCozinha(String tipoCozinha) {
+		return restauranteRepository.findByTipoCozinhaContaining(tipoCozinha);
+	}
+
+
 }
